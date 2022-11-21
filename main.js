@@ -48,7 +48,7 @@ const exampleEmbed = {
       {
         name: `7: <@${DailyFetch[6].userid}>`,
         value: '\u200b'},
-},
+
       {
         name: `8: <@${DailyFetch[7].userid}>`,
         value: '\u200b'
