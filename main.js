@@ -8,11 +8,17 @@ const { StringDecoder } = require('string_decoder');
 const { builtinModules } = require('module');
 const { hyperlink } = require('@discordjs/builders');
 
+async function main() {
+
+    await mongoose.connect("mongodb+srv://coldy:ekilrrPL1DyLow8j@hxhbot.ecke1.mongodb.net/registerdata", { useNewUrlParser: true, useUnifiedTopology: true, autoIndex: true });
+
+}
+
 const webhookClient = new WebhookClient({ url: 'https://discord.com/api/webhooks/1043831139313389598/E_kcPSJUlPwtfn-QdJ83lv_auO5JAyqbu0dAD_LjWhht1PzeKARcNGL5OXL9Mh21kD1e'} )
 const All = new Intents(7796)
 const client = new Client({partials:['MESSAGE','CHANNEL','GUILD_MEMBER','USER'], intents: [Intents.FLAGS.GUILD_MESSAGES,Intents.FLAGS.GUILDS,Intents.FLAGS.MESSAGE_CONTENT,Intents.FLAGS.GUILD_MEMBERS,Intents.FLAGS.GUILD_INTEGRATIONS] });
 let repeatDaily = async () => {
-const DailyFetch = Messages.find({ }).sort({'dailyMsg':-1}).exec()
+const DailyFetch = Messages.find({}).sort({'dailyMsg':-1}).exec()
 const exampleEmbed = {
 	color: 0x0099ff,
 	title: 'Daily Leaderboard',
